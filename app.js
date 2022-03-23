@@ -67,7 +67,7 @@ function view(){
 
     let msg = document.createElement('h4')
     document.querySelector('.wrapper').appendChild(msg)
-    let notes = document.createElement('p')
+    let notes = document.createElement('div')
     document.body.appendChild(notes)
 
     let submitnote = document.createElement('button')
@@ -83,7 +83,9 @@ function view(){
         }else if(isNaN(importanceinput.value)){
             msg.innerHTML = 'Importance must be a number'
         }else{
-            notes.innerHTML = importanceinput.value + ') ' + noteinput.value
+            let notetext = document.createElement('p')
+            notetext.innerHTML = importanceinput.value + ') ' + noteinput.value
+            notes.appendChild(notetext)
         }
 
 
